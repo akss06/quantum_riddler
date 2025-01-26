@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Grid from './components/Grid.jsx';
-import WordList from './components/WordList.jsx';
+import WordList from './components/wordList.jsx';
 import { generateGrid, WORDS } from './utils/generateGrid.js';
 import './App.css';
 
