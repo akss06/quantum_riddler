@@ -1,0 +1,55 @@
+.connections-app-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.connections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.connections-word-btn {
+  padding: 15px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.connections-word-btn.selected {
+  background-color: #90caf9;
+}
+
+.connections-word-btn.found {
+  background-color: #a5d6a7;
+  cursor: default;
+}
+
+.connections-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f44336;
+}
+
+.connections-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connections-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}

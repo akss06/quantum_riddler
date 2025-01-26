@@ -1,0 +1,70 @@
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    gap: 2px;
+    margin: 20px auto;
+}
+
+/* Cell */
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* Selected cell (Yellow Highlight) */
+.cell.selected {
+    background-color: #ffeb3b; /* Bright yellow */
+    border: 2px solid #f57f17; /* Darker border */
+    transform: scale(1.1);     /* Slight zoom */
+    box-shadow: 0 0 5px #f57f17;
+}
+
+/* Found words (Red Highlight, Unclickable) */
+.cell.found {
+    background-color: #ff9999; /* Soft red */
+    border: 2px solid #b30000; /* Dark red border */
+    color: white;
+    pointer-events: none;       /* Disable clicking */
+    transform: scale(1);
+    box-shadow: 0 0 5px #b30000;
+}
+
+/* Word list */
+.word-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.word-list li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Found words in the list */
+.word-list li.found {
+    text-decoration: line-through;
+    color: green;
+}
+
+/* Submit button */
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Message */
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+}
