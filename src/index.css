@@ -1,25 +1,69 @@
-/* Fullscreen center alignment */
-.start-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  /* Start Button Styling */
-  .start-button {
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .start-button:hover {
-    background-color: #45a049;
-  }
-  
+/* Center align the page content */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Welcome Heading */
+.home-page-heading {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Registration Container Styling */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Label Styling */
+.registration-label {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input Field Styling */
+.registration-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.registration-input:focus {
+  border-color: #4CAF50;
+}
+
+/* Start Button Styling */
+.start-button {
+  padding: 12px 25px;
+  font-size: 18px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.start-button:hover {
+  background-color: #45a049;
+}
+
+.start-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

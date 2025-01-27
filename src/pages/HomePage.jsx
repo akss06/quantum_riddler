@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function HomePage() {
   const [registrationNumber, setRegistrationNumber] = useState(''); // State to store the registration number
   const [isValid, setIsValid] = useState(false); // State to track if the registration number is valid
@@ -22,15 +23,18 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h1>Welcome to the Game!</h1>
+      <h1 className="home-page-heading">Welcome to Quantum Riddler!</h1>
       <div className="registration-container">
-        <label htmlFor="registration-number">Enter Registration Number:</label>
+        <label htmlFor="registration-number" className="registration-label">
+          Enter Registration Number:
+        </label>
         <input
           id="registration-number"
           type="text"
           value={registrationNumber}
           onChange={handleRegistrationChange}
           placeholder="Enter your registration number"
+          className="registration-input"
         />
       </div>
       <button
