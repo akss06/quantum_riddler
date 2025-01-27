@@ -6,7 +6,7 @@ import WordList from './components/wordList.jsx';
 import { generateGrid, WORDS } from './utils/generateGrid.js';
 import './App.css';
 
-function App( {onComplete} ) {
+function App({ onComplete }) {
     const [grid, setGrid] = useState([]);
     const [selectedCells, setSelectedCells] = useState([]);
     const [foundWords, setFoundWords] = useState([]);
@@ -69,9 +69,10 @@ function App( {onComplete} ) {
         // Reset selection after checking
         setSelectedCells([]);
     };
-    
-   
-  return (
+
+    const isFinishButtonDisabled = foundWords.length !== WORDS.length;
+
+    return (
         <div className="app">
             <h1>Word Search Game</h1>
             <Grid 
@@ -83,15 +84,14 @@ function App( {onComplete} ) {
             <button className="submit-btn" onClick={handleSubmit} disabled={selectedCells.length === 0}>Submit</button>
             {message && <p className="message">{message}</p>}
             <WordList words={WORDS} foundWords={foundWords.map(f => f.word)} />
-            <button className="submit-btn" onClick={onComplete}>Finish Word Search</button>
-            
-            
-            
-
-            
+            <button 
+                className="submit-btn" 
+                onClick={onComplete} 
+                //disabled={isFinishButtonDisabled}
+            >
+                Finish Word Search
+            </button>
         </div>
-
-        
     );
 }
 

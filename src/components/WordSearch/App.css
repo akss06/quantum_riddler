@@ -1,9 +1,11 @@
 /* Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(10, 40px);
-    gap: 2px;
+    grid-template-columns: repeat(15, 50px); /* Adjust to 15 columns, change size as needed */
+    gap: 5px; /* Increase gap between cells */
     margin: 20px auto;
+    max-width: 800px; /* Limit grid width */
+    padding: 10px; /* Add padding around grid */
 }
 
 /* Cell */
@@ -20,6 +22,11 @@
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
+/* Hover effect */
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
 /* Selected cell (Yellow Highlight) */
 .cell.selected {
     background-color: #ffeb3b; /* Bright yellow */
@@ -27,7 +34,6 @@
     transform: scale(1.1);     /* Slight zoom */
     box-shadow: 0 0 5px #f57f17;
 }
-
 /* Found words (Red Highlight, Unclickable) */
 .cell.found {
     background-color: #ff9999; /* Soft red */
@@ -39,6 +45,11 @@
 }
 
 /* Word list */
+.word-list {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
 .word-list ul {
     list-style: none;
     padding: 0;
@@ -57,14 +68,29 @@
 
 /* Submit button */
 .submit-btn {
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.submit-btn:disabled {
+    background-color: #dcdcdc; /* Gray when disabled */
+    cursor: not-allowed;
 }
 
 /* Message */
 .message {
     margin-top: 10px;
     font-weight: bold;
+    color: #333;
 }
