@@ -1,8 +1,8 @@
 const wordGroups = [
-    ['Sun', 'Moon', 'Star', 'Planet'],
-    ['Red', 'Blue', 'Green', 'Yellow'],
-    ['Dog', 'Cat', 'Mouse', 'Rabbit'],
-    ['Car', 'Bus', 'Train', 'Plane']
-  ];
-  
+  ['Qubit', 'Superposition', 'Entanglement', 'State'],
+  ['Quantum Gate', 'Quantum Circuit', 'Algorithm', 'Compute'],
+  ['Tunneling', 'Interference', 'Measurement', 'Decoherence'],
+  ['Cryptography', 'Teleportation', 'Simulation', 'Computing']
+];
+
 export default wordGroups;

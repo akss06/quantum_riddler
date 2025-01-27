@@ -1,16 +1,26 @@
+/* Connections App Container */
 .connections-app-container {
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items towards the top */
+  align-items: center;
+  height: 80vh; /* Reduce height to move everything up */
+  margin-top: 20px; /* Optional: adds some space from the top */
 }
 
+/* Connections Grid */
 .connections-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  max-width: 400px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
+/* Word Button */
 .connections-word-btn {
   padding: 15px;
   border: none;
@@ -18,23 +28,31 @@
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 
+/* Selected Word Button */
 .connections-word-btn.selected {
   background-color: #90caf9;
 }
 
+/* Found Word Button */
 .connections-word-btn.found {
   background-color: #a5d6a7;
   cursor: default;
 }
 
+/* Message */
 .connections-message {
   margin-top: 10px;
   font-weight: bold;
   color: #f44336;
 }
 
+/* Modal */
 .connections-modal {
   position: fixed;
   top: 0;
@@ -47,6 +65,7 @@
   align-items: center;
 }
 
+/* Modal Content */
 .connections-modal-content {
   background-color: white;
   padding: 20px;
