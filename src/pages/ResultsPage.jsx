@@ -18,7 +18,7 @@ const ResultsPage = () => {
     if (!isDataSent) {
       const sendResults = async () => {
         try {
-          const response = await fetch('http://localhost:5000/results', {
+          const response = await fetch('/api/results', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
