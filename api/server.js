@@ -33,7 +33,7 @@ const resultSchema = new mongoose.Schema({
 const Result = mongoose.model('Result', resultSchema);
 
 // Route to handle the result data
-app.post('/results', async (req, res) => {
+app.post('/api/results', async (req, res) => {
   const { time, registrationNumber } = req.body;
 
   try {
