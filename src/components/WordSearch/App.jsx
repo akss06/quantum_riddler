@@ -87,7 +87,7 @@ function App({ onComplete }) {
             <button 
                 className="submit-btn" 
                 onClick={onComplete} 
-                //disabled={isFinishButtonDisabled}
+                disabled={isFinishButtonDisabled}
             >
                 Finish Word Search
             </button>
