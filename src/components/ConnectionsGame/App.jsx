@@ -59,7 +59,7 @@ const App = ({ onComplete }) => {
 
       <button 
         onClick={handleFinishGame} 
-       disabled={!isAllGroupsFound} 
+       //disabled={!isAllGroupsFound} 
         className="submit-btn"
       >
         Finish Game
