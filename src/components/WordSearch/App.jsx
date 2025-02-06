@@ -81,7 +81,7 @@ function App({ onComplete }) {
                 selectedCells={selectedCells} 
                 foundWords={foundWords}
             />
-            <button className="submit-btn" onClick={handleSubmit} disabled={selectedCells.length === 0}>Submit</button>
+            <button className="submit-btn" onClick={handleSubmit} disabled={selectedCells.length === 0}>Check Word</button>
             {message && <p className="message">{message}</p>}
             <WordList words={WORDS} foundWords={foundWords.map(f => f.word)} />
             <button 
