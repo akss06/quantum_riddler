@@ -19,6 +19,16 @@
       "dest": "/api/server.js"
     },
     {
+      "src": "/game",
+      "dest": "/index.html",
+      "status": 200
+    },
+    {
+      "src": "/results",
+      "dest": "/index.html",
+      "status": 200
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html",
       "status": 200
