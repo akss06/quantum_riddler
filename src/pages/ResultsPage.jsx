@@ -27,7 +27,7 @@ const ResultsPage = () => {
           });
 
           if (response.ok) {
-            console.log('Results sent successfully');
+            
             setIsDataSent(true); // Mark data as sent
           } else {
             const data = await response.json();

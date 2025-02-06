@@ -50,7 +50,7 @@ function App({ onComplete }) {
     
     const handleSubmit = () => {
         const selectedWord = selectedCells.map(({ row, col }) => grid[row][col]).join('');
-        console.log(`Selected Word: ${selectedWord}`);
+        
 
         if (WORDS.includes(selectedWord)) {
             if (!foundWords.some(word => word.word === selectedWord)) {
@@ -87,9 +87,9 @@ function App({ onComplete }) {
             <button 
                 className="submit-btn" 
                 onClick={onComplete} 
-                //disabled={isFinishButtonDisabled}
+                disabled={isFinishButtonDisabled}
             >
-                Finish Word Search
+                Finish Game
             </button>
         </div>
     );
