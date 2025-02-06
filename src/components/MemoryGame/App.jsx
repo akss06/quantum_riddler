@@ -96,7 +96,7 @@ function App2({ onComplete }) {
       {/* Button with disabled logic based on matched cards */}
       <button className = 'submit-btn'
         onClick={onComplete}  // Directly use onComplete function
-        disabled={matchedCards.length !== cardImages.length}  // Disable button if game is not complete
+        //disabled={matchedCards.length !== cardImages.length}  // Disable button if game is not complete
       >
         Finish Game
       </button>
