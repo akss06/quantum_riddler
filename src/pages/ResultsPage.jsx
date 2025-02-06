@@ -18,7 +18,7 @@ const ResultsPage = () => {
     if (!isDataSent) {
       const sendResults = async () => {
         try {
-          const response = await fetch('https://quantum-riddler-game.vercel.app/api/results', {   
+          const response = await fetch('/api/results', {   
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
