@@ -1,8 +1,8 @@
 const wordGroups = [
-  ['Qubit', 'Superposition', 'Entanglement', 'State'],
-  ['Quantum Gate', 'Quantum Circuit', 'Algorithm', 'Compute'],
-  ['Tunneling', 'Interference', 'Measurement', 'Decoherence'],
-  ['Cryptography', 'Teleportation', 'Simulation', 'Computing']
+  ['Neils Bohr', 'Werner Heisenberg', 'Max Born', 'Wolfgang Pauli'],
+  ['Anton Zeilinger', 'Entanglement', 'Classical Communication', 'Quantum Measurement'],
+  ['Quantum Circuit', 'Hadamard', 'Phase Disk', '|0⟩'],
+  ['Decoherence', 'Phase Flip', 'Amplitude', 'Readout']
 ];
 
 export default wordGroups;
