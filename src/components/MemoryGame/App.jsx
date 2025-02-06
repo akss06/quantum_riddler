@@ -7,6 +7,12 @@ import img3 from './img/img3.jpg';
 import img4 from './img/img4.jpg';
 import img5 from './img/img5.jpg';
 import img6 from './img/img6.jpg';
+import img7 from './img/img7.jpg';
+import img8 from './img/img8.jpg';
+import img9 from './img/img9.jpg';
+import img10 from './img/img10.jpg';
+import img11 from './img/img11.jpg';
+import img12 from './img/img12.jpg';
 
 const cardImages = [
   { src: img1, matched: false },
@@ -14,7 +20,13 @@ const cardImages = [
   { src: img3, matched: false },
   { src: img4, matched: false },
   { src: img5, matched: false },
-  { src: img6, matched: false }
+  { src: img6, matched: false },
+  { src: img7, matched: false },
+  { src: img8, matched: false },
+  { src: img9, matched: false },
+  { src: img10, matched: false },
+  { src: img11, matched: false },
+  { src: img12, matched: false }
 ];
 
 function App2({ onComplete }) {
