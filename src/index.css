@@ -43,7 +43,14 @@ body{
   white-space: nowrap; /* Prevent line breaks */
   border-right: 4px solid #4CAF50; /* Cursor effect */
   width: 0;
-  animation: typing 2.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+  animation: typing 2.5s steps(30, end) forwards;
+}
+
+/* After animation ends, keep the cursor blinking */
+.home-page-heading::after {
+  content: "|"; /* Cursor */
+  display: inline-block;
+  animation: blink 0.75s step-end infinite;
 }
 
 /* Registration Container Styling */
