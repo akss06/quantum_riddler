@@ -1,18 +1,5 @@
-const WORDS = [
-    'QUANTUM',
-    'INTERFERENCE',
-    'DECOHERENCE',
-    'BLOCH',
-    'QUBIT',
-    'COMPUTING',
-    'TUNNELING',
-    'ENTANGLEMENT',
-];
-
 function generateGrid() {
-    const maxWordLength = Math.max(...WORDS.map(word => word.length));
-    const size = Math.max(15, maxWordLength); // Ensure grid is at least 15x15
-
+    const size = 20; // Fixed grid size
     const grid = Array.from({ length: size }, () => Array(size).fill(''));
 
     function canPlaceWord(word, row, col, isHorizontal) {
@@ -21,17 +8,16 @@ function generateGrid() {
             const c = isHorizontal ? col + i : col;
 
             if (r >= size || c >= size) return false; // Out of bounds
-
-            // Check if the cell is empty OR the letter matches (to allow overlap)
-            if (grid[r][c] !== '' && grid[r][c] !== word[i]) return false;
+            if (grid[r][c] !== '') return false; // No overlapping allowed
         }
         return true;
     }
 
     function placeWord(word) {
+        let attempts = 0;
         let placed = false;
 
-        while (!placed) {
+        while (!placed && attempts < 100) { // Avoid infinite loops
             const isHorizontal = Math.random() > 0.5;
             const row = Math.floor(Math.random() * size);
             const col = Math.floor(Math.random() * size);
@@ -49,6 +35,11 @@ function generateGrid() {
                     placed = true;
                 }
             }
+            attempts++;
+        }
+
+        if (!placed) {
+            console.warn(`Failed to place word: ${word}`); // Debugging
         }
     }
 
@@ -66,5 +57,3 @@ function generateGrid() {
 
     return grid;
 }
-
-export { generateGrid, WORDS };
