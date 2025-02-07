@@ -7,7 +7,7 @@ function Cell({ letter, row, col, onSelect, isSelected, isFound }) {
 
     return (
         <div
-            className={`cell ${isSelected ? 'selected' : ''} ${isFound ? 'found' : ''}`}
+            className={`cell ${isSelected ? 'selected' : isFound ? 'found' : ''}`}
             onClick={handleClick}
         >
             {letter}
