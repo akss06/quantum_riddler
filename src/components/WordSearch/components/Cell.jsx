@@ -1,13 +1,8 @@
-// src/components/Cell.jsx
-
 import React from 'react';
 
 function Cell({ letter, row, col, onSelect, isSelected, isFound }) {
-    // Prevent selecting cells that are already part of a found word
     const handleClick = () => {
-        if (!isFound) {
-            onSelect(row, col);
-        }
+        onSelect(row, col); // Allow selection of found letters
     };
 
     return (
