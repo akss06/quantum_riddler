@@ -38,12 +38,15 @@ function App({ onComplete }) {
 
     const handleSelect = (row, col) => {
         const alreadySelected = selectedCells.some(cell => cell.row === row && cell.col === col);
+        const isPartOfFoundWord = foundWords.some(({ coordinates }) =>
+            coordinates.some(cell => cell.row === row && cell.col === col)
+        );
 
         if (alreadySelected) {
             // Deselect cell if it's already selected
             setSelectedCells(selectedCells.filter(cell => !(cell.row === row && cell.col === col)));
-        } else if (isValidSelection(row, col)) {
-            // Select new cell if it follows a straight line
+        } else if (isValidSelection(row, col) || isPartOfFoundWord) {
+            // Allow selecting letters from already found words
             setSelectedCells([...selectedCells, { row, col }]);
         }
     };
