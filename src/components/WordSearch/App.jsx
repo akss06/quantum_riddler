@@ -1,5 +1,4 @@
 // src/App.jsx
-
 import React, { useState, useEffect } from 'react';
 import Grid from './components/Grid.jsx';
 import WordList from './components/wordList.jsx';
@@ -16,41 +15,30 @@ function App({ onComplete }) {
         setGrid(generateGrid());
     }, []);
 
-    // Helper to check if selection is horizontal or vertical
+    // Helper function to check if selection is a straight line (horizontal/vertical)
     const isValidSelection = (newRow, newCol) => {
-        if (selectedCells.length === 0) return true;
-    
+        if (selectedCells.length === 0) return true; // First selection is always valid
+
         const { row: firstRow, col: firstCol } = selectedCells[0];
-        const { row: lastRow, col: lastCol } = selectedCells[selectedCells.length - 1];
-    
-        // Ensure the new cell is within grid bounds
-        if (newRow < 0 || newCol < 0 || newRow >= grid.length || newCol >= grid[0].length) {
-            return false;
-        }
-    
-        // Check if the new cell is adjacent to the last selected cell (horizontally or vertically)
-        const isAdjacent =
-            (Math.abs(lastRow - newRow) === 1 && lastCol === newCol) || // Vertical adjacency
-            (Math.abs(lastCol - newCol) === 1 && lastRow === newRow); // Horizontal adjacency
-    
-        return isAdjacent;
+
+        // Ensure all selections follow a straight line (horizontal or vertical)
+        return newRow === firstRow || newCol === firstCol;
     };
-    
+
     const handleSelect = (row, col) => {
         const alreadySelected = selectedCells.some(cell => cell.row === row && cell.col === col);
-    
+
         if (alreadySelected) {
-            // Deselect the cell if it's already selected
+            // Deselect cell if it's already selected
             setSelectedCells(selectedCells.filter(cell => !(cell.row === row && cell.col === col)));
         } else if (isValidSelection(row, col)) {
-            // Select the new cell
+            // Select new cell if it follows a straight line
             setSelectedCells([...selectedCells, { row, col }]);
-        } 
+        }
     };
-    
+
     const handleSubmit = () => {
         const selectedWord = selectedCells.map(({ row, col }) => grid[row][col]).join('');
-        
 
         if (WORDS.includes(selectedWord)) {
             if (!foundWords.some(word => word.word === selectedWord)) {
@@ -66,11 +54,9 @@ function App({ onComplete }) {
             setMessage(`❌ "${selectedWord}" is not in the list. Try again!`);
         }
 
-        // Reset selection after checking
+        // Keep found words highlighted, but clear selected cells for the next selection
         setSelectedCells([]);
     };
-
-    const isFinishButtonDisabled = foundWords.length !== WORDS.length;
 
     return (
         <div className="app">
@@ -81,13 +67,19 @@ function App({ onComplete }) {
                 selectedCells={selectedCells} 
                 foundWords={foundWords}
             />
-            <button className="submit-btn" onClick={handleSubmit} disabled={selectedCells.length === 0}>Check Word</button>
+            <button 
+                className="submit-btn" 
+                onClick={handleSubmit} 
+                disabled={selectedCells.length === 0}
+            >
+                Check Word
+            </button>
             {message && <p className="message">{message}</p>}
             <WordList words={WORDS} foundWords={foundWords.map(f => f.word)} />
             <button 
                 className="submit-btn" 
                 onClick={onComplete} 
-                disabled={isFinishButtonDisabled}
+                disabled={foundWords.length !== WORDS.length}
             >
                 Finish Game
             </button>
