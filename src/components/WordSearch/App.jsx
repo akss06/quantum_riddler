@@ -52,20 +52,20 @@ function App({ onComplete }) {
         const selectedWord = selectedCells.map(({ row, col }) => grid[row][col]).join('');
 
         if (WORDS.includes(selectedWord)) {
-            if (!foundWords.some(word => word.word === selectedWord)) {
+            if (foundWords.some(word => word.word === selectedWord)) {
+                setMessage(`⚠️ You've already found "${selectedWord}"`);
+            } else {
                 setFoundWords([
                     ...foundWords,
                     { word: selectedWord, coordinates: selectedCells }
                 ]);
                 setMessage(`✔️ Correct! Found "${selectedWord}"`);
-            } else {
-                setMessage(`⚠️ You've already found "${selectedWord}"`);
             }
         } else {
             setMessage(`❌ "${selectedWord}" is not in the list. Try again!`);
         }
 
-        // Keep found words highlighted, but clear selected cells for the next selection
+        // Keep found words highlighted, but allow selecting overlapping letters
         setSelectedCells([]);
     };
 
