@@ -15,14 +15,25 @@ function App({ onComplete }) {
         setGrid(generateGrid());
     }, []);
 
-    // Helper function to check if selection is a straight line (horizontal/vertical)
+    // Helper to check if selection follows a straight line (horizontal/vertical)
     const isValidSelection = (newRow, newCol) => {
         if (selectedCells.length === 0) return true; // First selection is always valid
 
         const { row: firstRow, col: firstCol } = selectedCells[0];
+        const { row: lastRow, col: lastCol } = selectedCells[selectedCells.length - 1];
 
         // Ensure all selections follow a straight line (horizontal or vertical)
-        return newRow === firstRow || newCol === firstCol;
+        const isHorizontal = firstRow === newRow;
+        const isVertical = firstCol === newCol;
+
+        if (!isHorizontal && !isVertical) return false; // No diagonal selection
+
+        // Ensure selected letters are in order (no skipping)
+        if (isHorizontal) {
+            return Math.abs(lastCol - newCol) === 1; // Only allow adjacent horizontal moves
+        } else {
+            return Math.abs(lastRow - newRow) === 1; // Only allow adjacent vertical moves
+        }
     };
 
     const handleSelect = (row, col) => {
