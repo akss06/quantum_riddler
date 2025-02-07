@@ -43,12 +43,12 @@ body {
     color: #000000; /* Black text for readability */
 }
 
-/* Found words (Red Highlight, Unclickable) */
+/* Found words (Red Highlight) */
 .cell.found {
     background-color: #ff4444; /* Brighter red */
     border: 2px solid #b30000;
     color: #ffffff;
-    pointer-events: none;
+    /* REMOVED: pointer-events: none; */
     transform: scale(1);
     box-shadow: 0 0 5px #b30000;
 }
